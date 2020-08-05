@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TweenMax MorphSVG</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Recursive&display=swap" rel="stylesheet">
+</head>
+<body>
+    <p>In News Today</p>
+    <h1>A new era has been born!</h1>
+    <button id="cta">See how</button>
+
+    <svg id="shape1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1691.738 820.772">
+    <path id="small" d="M175.888 5.554C116.66 19.912 0 45.039 0 233.491s71.791 281.78 332.034 236.911 445.105-120.43 493.564-210.173-75.381-155.966-206.4-206.22S235.116-8.804 175.888 5.554z" fill="red"/>
+    <path id="large" d="M0 698.727s30.92 122.045 251.678 122.045 436.177-278.344 944.1-400.389 495.936-226.345 495.936-309.388S1572.187 0 1572.187 0H3.141z" fill="red"/>
+    </svg>
+</body>
+<script src="./js/TweenMax.min.js"></script>
+<!-- <script src="./js/MorphSVGPlugin.min.js"></script> -->
+<script src="./js/morph.js"></script>
+<script>
+    animated = false;
+    clickElement = document.getElementById("cta");
+
+    small = document.getElementById("small");
+
+
+    TweenMax.to(small, 1, {x: "+=18%", y: "+=22%", ease: Elastic.easeOut.config(1, 0.3)});
+
+    clickElement.addEventListener('click', function() {
+        if(animated == false) {
+            animated = true
+            TweenMax.to(small, 1, {morphSVG: "#large", x:"-=24%", y: "-=22%", ease: Power4.easeOut})
+        } else {
+            TweenMax.to(small, 1, {morphSVG: "#small", x: "+=24%", y: "+=22%", ease: Power3.easeOut});
+            animated = false
+        }
+    });
+</script>
+</html>

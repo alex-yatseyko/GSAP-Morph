@@ -1,0 +1,50 @@
+body {
+    padding: 12%;
+    font-family: 'Montserrat';
+  }
+  
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+  }
+  
+  button {
+    background: darkred;
+    border: none;
+    margin-top: 30px;
+    color: white;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .3em .6em;
+    border-radius: 20px;
+    cursor:pointer;
+    font-family: 'Recursive', sans-serif;
+  }
+  
+  p {
+    color: red;
+    background: white;
+    display: inline-block;
+    padding: .3em .6em;
+    border-radius: 20px;
+    font-family: 'Recursive', sans-serif;
+  }
+  
+  #large {
+    visibility: hidden;
+  }
+  
+  svg {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  #shape2 {
+    width: 100%;
+  }
+  
